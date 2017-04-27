@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Snapchat Overlay · altbdoor.github.io</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext">
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <h1>Snapchat Overlay</h1>
+    <h4>A simple Snapchat overlay</h4>
+    <hr>
+    
+    <form>
+        <table id="container-table">
+            <tr>
+                <td id="container-image">
+                    <p>Please select an image file:</p>
+                    <input type="file" id="form-image" accept="image/jpeg, image/png">
+                    <input type="reset" id="form-reset">
+                    
+                    <hr>
+                    
+                    <canvas id="viewport"></canvas>
+                </td>
+                <td id="container-tweak">
+                    <table>
+                        <tr><td colspan="3" class="container-tweak-title">Text</td></tr>
+                        <tr>
+                            <td style="width: 33.33%">
+                                Text content:
+                                <input type="text" name="text_content" value="Lorem ipsum dolor sit amet">
+                            </td>
+                            <td style="width: 33.34%">
+                                Font family:
+                                <input type="text" name="text_font_family" value="Lato">
+                            </td>
+                            <td style="width: 33.33%">
+                                Font size (pixels):
+                                <input type="number" name="text_size" value="30" step="1" min="1">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Font color (hex):
+                                <input type="text" name="text_color" value="fff">
+                            </td>
+                            <td>
+                                Position from top (pixels):
+                                <input type="number" name="text_top_pos" value="100" min="0" step="10">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr><td colspan="3" class="container-tweak-title">Text Background</td></tr>
+                        <tr>
+                            <td>
+                                Background color (hex):
+                                <input type="text" name="bg_color" value="000">
+                            </td>
+                            <td>
+                                Transparency:
+                                <input type="number" name="bg_trans" value="0.65" step="0.1" min="0.00" max="1.00">
+                            </td>
+                            <td>
+                                Padding (pixels):
+                                <input type="number" name="bg_pad" value="15" step="1" min="0">
+                            </td>
+                        </tr>
+                        <tr><td colspan="3" class="container-tweak-title">Counter</td></tr>
+                        <tr>
+                            <td>
+                                Count:
+                                <input type="number" name="counter_content" value="8" step="1" min="0">
+                            </td>
+                            <td>
+                                Font size (pixels):
+                                <input type="number" name="counter_text_size" value="30" step="1" min="1">
+                            </td>
+                            <td>
+                                Padding (pixels):
+                                <input type="number" name="counter_pad" value="12" step="1" min="0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Gap from top-right (pixels):
+                                <input type="number" name="counter_gap" value="15" step="1" min="0">
+                            </td>
+                            <td>
+                                Curveness (pixels):
+                                <input type="number" name="counter_curve" value="10" step="1" min="0">
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr><td colspan="3" class="container-tweak-title">Generate Image</td></tr>
+                        <tr>
+                            <td colspan="3">
+                                Image quality (1 - 100%) (JPG only):
+                                <input type="number" name="image_quality" value="95" step="1" min="1" max="100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="button" class="generate-image" data-type="image/jpeg">
+                                    Generate JPG <br>
+                                    (Recommended)
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="generate-image" data-type="image/png">
+                                    Generate PNG <br>
+                                    (Might be slow)
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: right; padding-bottom: 50px;">
+                                Or you can right click on the image and click "Save As".
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+    <script src="public/script.js"></script>
+</body>
+</html>
