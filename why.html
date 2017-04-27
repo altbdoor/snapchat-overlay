@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Snapchat Overlay · altbdoor.github.io</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&subset=latin-ext">
+    <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+    <h1>Snapchat Overlay</h1>
+    <p>
+        A simple Snapchat overlay.
+        <a href="index.html">Let's snip.</a>
+    </p>
+    <hr>
+    
+    <div style="max-width: 600px;">
+        <p>Most of the Snapchat overlay websites I see are either riddled with advertisements, or require you to upload the image into their servers. Well, yes, one can claim to not save a copy of your image through a thousand worded terms and conditions page. And along with it, "the terms and conditions is subject to change without notice".</p>
+        
+        <p>So, with a "hey, maybe this could work" mindset, I started making a draft with a DOM-to-image library, only to notice that webfonts are not supported. I later found the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API">Canvas API</a> as an alternative, and voila. All the rendering work is done by your browser. None of the image information is being sent to anywhere (unless your browser does it).</p>
+        
+        <p>This web application is only tested on Mozilla Firefox and Google Chrome.</p>
+        
+        <p>The font <a href="https://fonts.google.com/specimen/Lato">"Lato" by Łukasz Dziedzic</a> is used, as its being claimed to be the <a href="https://graphicdesign.stackexchange.com/questions/35378/substitute-for-avenir-google-webfont-or-typekit">closest font to Avenir</a>, which is said to be the <a href="https://www.quora.com/Which-Typeface-Font-does-Snapchat-use">font face being used in Snapchat</a>.</p>
+        
+        <p>A large part of the controls are left to the user, as a user might upload images of different sizes, and I am too lazy to calculate the appropriate sizes for the overlay items for different image sizes.</p>
+        
+        <p>Found an issue? Report it on <a href="https://github.com/altbdoor/snapchat-overlay">GitHub</a>.</p>
+    </div>
+    
+</body>
+</html>

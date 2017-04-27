@@ -14,7 +14,10 @@
         bgImage = null;
     }
     
-    d.querySelector('form').onreset = clearViewport;
+    var form = d.querySelector('form');
+    form.onreset = clearViewport;
+    form.onsubmit = function (e) { e.preventDefault(); };
+    
     formImage.onchange = function () {
         var file = null;
         
