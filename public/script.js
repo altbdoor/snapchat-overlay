@@ -62,11 +62,34 @@
     
     function redrawViewport (param) {
         if (bgImage) {
-            ctx.clearRect(0, 0, bgImage.width, bgImage.height);
+            var imageRotate = parseInt(param.image_rotate || 0);
+            var imageChopWidth = parseInt(param.image_chop_width || 0);
+            var imageChopHeight = parseInt(param.image_chop_height || 0);
             
-            viewport.width = bgImage.width;
-            viewport.height = bgImage.height;
-            ctx.drawImage(bgImage, 0, 0);
+            if (imageRotate % 90 != 0) {
+                imageRotate = 0;
+            }
+            
+            if (imageRotate % 180 == 0) {
+                viewport.width = bgImage.width;
+                viewport.height = bgImage.height;
+            }
+            else {
+                viewport.width = bgImage.height;
+                viewport.height = bgImage.width;
+            }
+            
+            viewport.width -= imageChopWidth;
+            viewport.height -= imageChopHeight;
+            
+            ctx.clearRect(0, 0, viewport.width, viewport.height);
+            
+            // http://stackoverflow.com/questions/17411991
+            ctx.save();
+            ctx.translate(viewport.width / 2, viewport.height / 2);
+            ctx.rotate(imageRotate * Math.PI / 180);
+            ctx.drawImage(bgImage, -bgImage.width / 2, -bgImage.height / 2);
+            ctx.restore();
             
             var bgColorHex = (param.bg_color || '000');
             var bgColorRgb = hexToRgb(bgColorHex);

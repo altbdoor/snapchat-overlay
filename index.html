@@ -27,21 +27,37 @@
                     
                     <hr>
                     
+                    <p>Generated image:</p>
                     <canvas id="viewport"></canvas>
                 </td>
                 <td id="container-tweak">
                     <table>
-                        <tr><td colspan="3" class="container-tweak-title">Text</td></tr>
+                        <tr><td colspan="3" class="container-tweak-title">Image</td></tr>
                         <tr>
                             <td style="width: 33.33%">
+                                Rotate (degrees):
+                                <input type="number" name="image_rotate" value="0" step="90" min="0">
+                            </td>
+                            <td style="width: 33.34%">
+                                Chop width (pixels):
+                                <input type="number" name="image_chop_width" value="0" step="10" min="0">
+                            </td>
+                            <td style="width: 33.33%">
+                                Chop height (pixels):
+                                <input type="number" name="image_chop_height" value="0" step="10" min="0">
+                            </td>
+                        </tr>
+                        <tr><td colspan="3" class="container-tweak-title">Text</td></tr>
+                        <tr>
+                            <td>
                                 Text content:
                                 <input type="text" name="text_content" value="Lorem ipsum dolor sit amet">
                             </td>
-                            <td style="width: 33.34%">
+                            <td>
                                 Font family:
                                 <input type="text" name="text_font_family" value="Lato">
                             </td>
-                            <td style="width: 33.33%">
+                            <td>
                                 Font size (pixels):
                                 <input type="number" name="text_size" value="30" step="1" min="0">
                             </td>
